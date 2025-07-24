@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'app-todo-rest'
+    metrics_path: /q/metrics
+    static_configs:
+      - targets: ['app-todo-rest:8080']
+  - job_name: 'app-web'
+    metrics_path: /q/metrics
+    static_configs:
+      - targets: ['app-web:8081']
+
