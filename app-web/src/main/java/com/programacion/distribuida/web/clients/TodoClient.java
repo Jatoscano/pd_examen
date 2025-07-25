@@ -12,8 +12,8 @@ public interface TodoClient {
     List<TodoDTO> listTodos();
 
     class TodoDTO {
-        public Long id;
-        public Long userId;
+        public Integer id;
+        public Integer userId;
         public String title;
         public boolean completed;
     }

@@ -23,7 +23,7 @@ public class TodoResource {
 
     @GET
     @Path("/{id}")
-    public Todo get(@PathParam("id") Long id) {
+    public Todo get(@PathParam("id") Integer id) {
         return todoRepository.findById(id);
     }
 
@@ -37,7 +37,7 @@ public class TodoResource {
     @PUT
     @Path("/{id}")
     @Transactional
-    public Response update(@PathParam("id") Long id, Todo todo) {
+    public Response update(@PathParam("id") Integer id, Todo todo) {
         Todo entity = todoRepository.findById(id);
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
@@ -51,7 +51,7 @@ public class TodoResource {
     @DELETE
     @Path("/{id}")
     @Transactional
-    public Response delete(@PathParam("id") Long id) {
+    public Response delete(@PathParam("id") Integer id) {
         boolean deleted = todoRepository.deleteById(id);
         if (!deleted) {
             return Response.status(Response.Status.NOT_FOUND).build();

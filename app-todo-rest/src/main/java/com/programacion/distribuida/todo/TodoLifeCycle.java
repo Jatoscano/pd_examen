@@ -20,11 +20,11 @@ import java.util.UUID;
 public class TodoLifeCycle {
 
     @Inject
-    @ConfigProperty(name = "consul.host", defaultValue = "8500")
+    @ConfigProperty(name = "consul.host", defaultValue = "127.0.0.1")
     String consulHost;
 
     @Inject
-    @ConfigProperty(name = "consul.port", defaultValue = "127.0.0.1")
+    @ConfigProperty(name = "consul.port", defaultValue = "8500")
     Integer consulPort;
 
     @Inject

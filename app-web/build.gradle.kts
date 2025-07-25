@@ -1,8 +1,5 @@
 plugins {
     id("java")
-}
-
-plugins {
     id("io.freefair.lombok") version "8.13.1"
     id("io.quarkus") version "3.22.2"
 }
@@ -62,6 +59,7 @@ dependencies {
 
     // Health
     implementation("io.quarkus:quarkus-smallrye-health")
+    implementation("io.quarkus:quarkus-container-image-docker")
 
 }
 

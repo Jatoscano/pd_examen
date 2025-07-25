@@ -9,13 +9,16 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 @Path("/todos")
 @Produces(MediaType.APPLICATION_JSON)
 public class TodoWebResource {
     @Inject
+    @RestClient
     TodoClient todoClient;
     @Inject
+    @RestClient
     UserClient userClient;
 
     @GET
@@ -29,11 +32,11 @@ public class TodoWebResource {
     }
 
     public static class TodoWithUser {
-        public Long id;
+        public Integer id;
         public String title;
         public boolean completed;
         public String userName;
-        public TodoWithUser(Long id, String title, boolean completed, String userName) {
+        public TodoWithUser(Integer id, String title, boolean completed, String userName) {
             this.id = id;
             this.title = title;
             this.completed = completed;
@@ -41,4 +44,3 @@ public class TodoWebResource {
         }
     }
 }
-

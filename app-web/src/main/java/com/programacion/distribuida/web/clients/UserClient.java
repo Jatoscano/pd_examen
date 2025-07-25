@@ -9,10 +9,10 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 public interface UserClient {
     @GET
     @Path("/users/{userId}")
-    UserDTO getUser(@PathParam("userId") Long userId);
+    UserDTO getUser(@PathParam("userId") Integer userId);
 
     class UserDTO {
-        public Long id;
+        public Integer id;
         public String name;
         public String username;
         public String email;
